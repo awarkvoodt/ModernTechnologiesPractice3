@@ -1,0 +1,11 @@
+"C:\Program Files\Java\jdk-25.0.2\bin\java.exe" "-javaagent:C:\Users\smirn\Desktop\university\IntelliJ IDEA Community Edition 2025.2.6.1\lib\idea_rt.jar=63697" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\smirn\IdeaProjects\ModernTechnologiesPractice3\out\production\ModernTechnologiesPractice3 part1.part1_3.ObjectDescriber
+Это null
+Это положительное целое число: 42
+Это не положительное целое число: -5
+Это пустая строка
+Это строка: Привет
+Это число с плавающей точкой: 3.14
+Это массив int: [1, 2, 3]
+иные объекты: true
+
+Process finished with exit code 0

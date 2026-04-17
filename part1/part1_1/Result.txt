@@ -1,0 +1,13 @@
+"C:\Program Files\Java\jdk-25.0.2\bin\java.exe" "-javaagent:C:\Users\smirn\Desktop\university\IntelliJ IDEA Community Edition 2025.2.6.1\lib\idea_rt.jar=63545" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\smirn\IdeaProjects\ModernTechnologiesPractice3\out\production\ModernTechnologiesPractice3 part1.part1_1.NumberClassifier
+Group: ПИ24-2в
+Sequence number: 13
+Date: 2026-04-17
+-5 -> отрицательное
+0 -> ноль
+7 -> однозначное
+42 -> двузначное
+100 -> трехзначное
+1000 -> большое
+-999 -> отрицательное
+
+Process finished with exit code 0

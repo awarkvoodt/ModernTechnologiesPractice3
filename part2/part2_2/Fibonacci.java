@@ -1,5 +1,12 @@
 package part2.part2_2;
 
+//Реализуйте класс Fibonacci с методами:
+//fibIterative(int n) — итеративное вычисление с
+//while-циклом; fibFor(int n) — с for-циклом.
+//Выведите F(0)..F(15). Найдите первое число Фибоначчи,
+//превышающее 1000.
+
+
 public class Fibonacci {
 
     public static long fibIterative(int n) {
