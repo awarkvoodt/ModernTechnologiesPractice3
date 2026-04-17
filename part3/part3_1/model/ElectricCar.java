@@ -24,7 +24,7 @@ public class ElectricCar extends Car implements Electric {
     public double getRangeKm() {
         // TODO: запас хода = maxRangeKm * batteryLevel.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0.0;
+        return maxRangeKm * batteryLevel;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -32,7 +32,16 @@ public class ElectricCar extends Car implements Electric {
     public void charge(double hours) {
         // TODO: +20% в час, максимум 100%.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
+        double charge_cnt = hours * 0.2;
+        double newBatteryLevel = batteryLevel + charge_cnt;
 
+        if (newBatteryLevel > 1.0) {
+            batteryLevel = 1.0;
+        } else if (newBatteryLevel < 0.0) {
+            batteryLevel = 0.0;
+        } else {
+            batteryLevel = newBatteryLevel;
+        }
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
