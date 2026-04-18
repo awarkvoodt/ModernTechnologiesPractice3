@@ -22,6 +22,10 @@ public class BankAccount {
     public boolean deposit(double amount) {
         // TODO: пополнение разрешено только при amount > 0.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
+        if (amount > 0){
+            balance += amount;
+            return true;
+        }
         return false;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
@@ -33,15 +37,47 @@ public class BankAccount {
         // 3) при 3 неверных попытках blocked=true;
         // 4) верный PIN сбрасывает failedAttempts и проверяет amount.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return false;
+        if (blocked) {
+            System.out.println("отказ");
+            return false;
+        }
+
+        if(!validatePin(enteredPin)){
+            failedAttempts++;
+            System.out.println("Неверный пароль. Попробуйте еще раз.");
+
+            if (failedAttempts >= 3){
+                blocked = true;
+                System.out.println("отказ. Введено больше 3 неверных паролей.");
+            }
+            return false;
+        }
+        failedAttempts = 0;
+
+        if (amount <= 0) {
+            System.out.println("Сумма снятия меньеш нуля.");
+            return false;
+        }
+
+        if (amount>balance){
+            System.out.println("Сумма для снятия больше баланса.");
+            return false;
+        }
+
+        balance -= amount;
+        System.out.println("Снято: "  + amount + ". Остаток: " + balance);
+        return true;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public String getMaskedBalance() {
         // TODO: скрывайте суммы свыше 100000.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return "TODO";
+        if (balance > 100000){
+            return "******";
+        }
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        return String.format("%.2f", balance);
     }
 
     @Override
@@ -50,3 +86,4 @@ public class BankAccount {
             accountNumber, owner, getMaskedBalance(), blocked ? " [ЗАБЛОКИРОВАН]" : "");
     }
 }
+
