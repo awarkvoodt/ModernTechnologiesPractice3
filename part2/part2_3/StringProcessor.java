@@ -6,7 +6,17 @@ public class StringProcessor {
     public static int countVowels(String text) {
         // TODO: посчитайте русские и английские гласные.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return -1;
+        String text_lower = text.toLowerCase();
+
+        int cnt = 0;
+        for (int i = 0; i < text_lower.length(); i++){
+            char c = text_lower.charAt(i);
+            if (VOWELS.indexOf(c) != -1){
+                cnt++;
+            }
+        }
+
+        return cnt;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -14,23 +24,57 @@ public class StringProcessor {
         // TODO: палиндром без учета регистра и знаков препинания.
         // Подсказка: сравнение символов с двух концов.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return false;
+        String text_clean = text.toLowerCase().replaceAll("[^a-zа-яё0-9]", "");
+
+        int left = 0;
+        int right = text_clean.length()-1;
+
+        while (left < right){
+            if (text_clean.charAt(left) != text_clean.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static String reverse(String text) {
         // TODO: реверс без StringBuilder.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return "";
+        char[] chars = text.toCharArray();
+        int left = 0;
+        int right = text.length() - 1;
+
+        while (left < right){
+            char c = chars[left];
+            chars[left] = chars[right];
+            chars[right] = c;
+
+            left++;
+            right--;
+        }
+        return new String(chars);
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public static String findLongestWord(String sentence) {
         // TODO: найдите самое длинное слово.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return "";
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        String[] words = sentence.split("[^a-zA-Zа-яА-ЯёЁ0-9]+");
+
+        String longestWord = "";
+
+        for (String word : words) {
+            if (word.length() > longestWord.length()) {
+                longestWord = word;
+            }
+        }
+
+        return longestWord;
     }
+        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
 
     public static void main(String[] args) {
         String s1 = "Привет, Java-разработчик!";

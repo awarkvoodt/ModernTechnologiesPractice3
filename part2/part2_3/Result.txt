@@ -1,0 +1,9 @@
+"C:\Program Files\Java\jdk-25.0.2\bin\java.exe" "-javaagent:C:\Users\smirn\Desktop\university\IntelliJ IDEA Community Edition 2025.2.6.1\lib\idea_rt.jar=56276" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\smirn\IdeaProjects\ModernTechnologiesPractice3\out\production\ModernTechnologiesPractice3 part2.part2_3.StringProcessor
+Гласные: 8
+Палиндром (топот): true
+Палиндром (Madam): true
+Реверс (hello): olleh
+Палиндром (фраза): true
+Самое длинное слово: quick
+
+Process finished with exit code 0
