@@ -23,7 +23,12 @@ public class Lion extends Predator implements Trainable {
     public void train(String command) {
         // TODO: добавьте команду в список, если она непустая.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        if (command != null && !command.trim().isEmpty()) {
+            commands.add(command);
+            System.out.println(name + " выучил новую команду: " + command);
+        } else {
+            System.out.println("Пустая команда.");
+        }
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
